@@ -162,8 +162,10 @@ Les deux signaux portent la **même référence `ND-...`** pour les relier.
 4. Dans Make, ajoutez un module **« Router »** puis deux branches selon le champ **`event`** :
    - **Branche `initiated`** → module **Email / Gmail → Send an email** : destinataire = **vous (Novadom)**. Mettez en pièces jointes les fichiers reçus (champ `documents`) et le contrat (`contractHtml`). Objet : « Nouveau dossier `{{reference}}` — à vérifier ».
    - **Branche `paid`** → **deux** envois d'e-mail :
-     1. **Au client** (`{{emailClient}}`) : objet « Votre contrat de domiciliation (spécimen) — `{{reference}}` », corps = `{{contractHtml}}` (cochez « contenu HTML »). C'est le contrat **marqué SPÉCIMEN**.
-     2. **À Novadom** : « Paiement confirmé `{{reference}}` — contacter le client puis envoyer à signer ».
+     1. **Au client** (`{{emailClient}}`) : objet « Votre contrat de domiciliation (spécimen) — `{{reference}}` ». **Joignez le PDF** : dans Make, ajoutez une pièce jointe à partir du champ **`contractPdfBase64`** (contenu encodé en base64), avec pour nom de fichier **`{{contractPdfName}}`**. C'est le contrat **pré-rempli, marqué SPÉCIMEN**. (Vous pouvez aussi mettre `{{contractHtml}}` dans le corps du message.)
+     2. **À Novadom** : « Paiement confirmé `{{reference}}` — contacter le client puis envoyer à signer » (joignez aussi le PDF si besoin).
+
+> 💡 Le site fabrique le PDF tout seul dans le navigateur du client et l'envoie en base64 dans l'événement `paid`. Dans Make/Zapier, cherchez l'option « Convert base64 to file » (ou « Create file from base64 ») pour obtenir la pièce jointe.
 5. **Activez** le scénario (interrupteur en bas à gauche).
 
 > 💡 Variante encore plus simple (sans pièces jointes automatiques) : **Formspree** (https://formspree.io). Vous collez l'URL du formulaire dans `endpointEnvoi`, et vous recevez chaque dossier par e-mail. Make reste recommandé pour tout automatiser.

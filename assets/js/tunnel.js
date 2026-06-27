@@ -288,6 +288,15 @@
   $('#btn-next').addEventListener('click', function () { go(state.step + 1); });
   $('#btn-prev').addEventListener('click', function () { go(state.step - 1); });
   $('#btn-pay').addEventListener('click', pay);
+
+  // Téléchargement de l'aperçu du contrat en PDF (avant achat)
+  var dlp = $('#dl-preview-pdf');
+  if (dlp) dlp.addEventListener('click', function () {
+    var d = read();
+    var doc = window.NOVADOM.genererContratPDF ? window.NOVADOM.genererContratPDF(d) : null;
+    if (doc) doc.save('contrat-domiciliation-SPECIMEN-apercu.pdf');
+    else alert('Le téléchargement PDF n\'est pas disponible (connexion requise pour charger le module).');
+  });
   document.querySelectorAll('.stepper__i').forEach(function (i) {
     i.addEventListener('click', function () { var n = +i.dataset.step; if (n < state.step) go(n); });
   });

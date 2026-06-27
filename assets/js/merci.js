@@ -22,7 +22,11 @@
     if (email) email.textContent = order.emailClient || 'votre adresse e-mail';
 
     var dl = document.getElementById('dl-contract');
-    if (dl) dl.addEventListener('click', function () { downloadContract(order); });
+    if (dl) dl.addEventListener('click', function () {
+      var doc = window.NOVADOM.genererContratPDF ? window.NOVADOM.genererContratPDF(order) : null;
+      if (doc) { doc.save(window.NOVADOM.nomFichierContrat(order)); }
+      else { downloadContractHTML(order); }
+    });
   }
 
   // Envoi de l'événement « paid » → l'automatisation envoie les e-mails
@@ -47,6 +51,17 @@
     contractHtml: order && order.contractHtml
   };
 
+  // Joindre le contrat en PDF (base64) pour l'e-mail au client + dossier Novadom
+  try {
+    if (order && window.NOVADOM.genererContratPDF) {
+      var pdfDoc = window.NOVADOM.genererContratPDF(order);
+      if (pdfDoc) {
+        payload.contractPdfBase64 = pdfDoc.output('datauristring').split(',')[1];
+        payload.contractPdfName = window.NOVADOM.nomFichierContrat(order);
+      }
+    }
+  } catch (e) { /* le PDF n'est pas bloquant pour l'envoi */ }
+
   if (C.endpointEnvoi) {
     fetch(C.endpointEnvoi, { method: 'POST', mode: 'cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
       .then(function (r) {
@@ -64,7 +79,7 @@
   }
 
   /* Téléchargement du contrat spécimen (fichier HTML imprimable) */
-  function downloadContract(o) {
+  function downloadContractHTML(o) {
     var wm = '<div style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:0">' +
       '<span style="font:600 90px Georgia,serif;color:rgba(182,136,63,.14);transform:rotate(-24deg);letter-spacing:.1em;text-transform:uppercase">Spécimen</span></div>';
     var css = '<style>body{font-family:Georgia,serif;color:#2a3550;max-width:760px;margin:40px auto;padding:0 24px;line-height:1.7;position:relative}' +

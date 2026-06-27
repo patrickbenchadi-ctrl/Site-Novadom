@@ -614,6 +614,7 @@ ul{margin:0;padding:0;list-style:none}
             <div class="contract-preview__wm"><span>Spécimen</span></div>
             <div class="contract-doc-wrap"></div>
           </div>
+          <div style="margin-top:14px"><button type="button" class="btn btn--ghost" id="dl-preview-pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5"/></svg> Télécharger l'aperçu (PDF)</button></div>
           <label class="consent"><input type="checkbox" id="consent"><span>J'ai lu et j'accepte les termes du contrat de domiciliation, ainsi que la durée minimale de 3 mois et la caution contractuelle de 3 mois. Je comprends que le contrat me sera adressé pour signature après vérification de mon dossier.</span></label>
         </section>
 
@@ -743,8 +744,10 @@ ul{margin:0;padding:0;list-style:none}
 })();
 
 </script>
-<script src="../assets/js/config.js"></script>
+<script src="../assets/js/jspdf.umd.min.js"></script>
+  <script src="../assets/js/config.js"></script>
   <script src="../assets/js/format.js"></script>
+  <script src="../assets/js/contrat-pdf.js"></script>
   <script src="../assets/js/tunnel.js"></script>
 </body>
 </html>
