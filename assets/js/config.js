@@ -21,7 +21,7 @@ window.NOVADOM = {
     metro:      "M° Marcel Sembat / Jean Jaurès",
     tel:        "01 86 04 08 87",
     telLien:    "+33186040887",
-    email:      "contact@boulogne-domiciliation.com", // ← mettez votre e-mail réel
+    email:      "patrick.benchadi@gmail.com", // ← e-mail de réception des dossiers
     dirigeants: "Patrick Benchadi-Daurat (Président) et Michaël Szyjka (Directeur Général)"
   },
 
@@ -62,6 +62,8 @@ window.NOVADOM = {
         Laissez "" pour utiliser le mode démonstration (pas de vrai paiement).
      ---------------------------------------------------------------------- */
   stripe: {
+    // Un lien par formule de base. La caution/options sont rappelées au client.
+    // Astuce simple : 1 lien d'abonnement par statut.
     liens: {
       societe:     "https://buy.stripe.com/test_8x2aEWfHua59h2U6ua4F200",
       auto:        "https://buy.stripe.com/test_8x2aEWfHua59h2U6ua4F200",
@@ -69,6 +71,7 @@ window.NOVADOM = {
       association: "https://buy.stripe.com/test_8x2aEWfHua59h2U6ua4F200",
       particulier: "https://buy.stripe.com/test_8x2aEWfHua59h2U6ua4F200"
     },
+    // URL de retour après paiement réussi (à configurer dans Stripe aussi)
     retour: "/merci/"
   },
 
@@ -91,7 +94,7 @@ window.NOVADOM = {
           3. Collez la clé ci-dessous.
         Tant que c'est "", le contact bascule sur un envoi simple (sans pièce jointe).
      ---------------------------------------------------------------------- */
-  web3formsKey: "",   // ex : "a1b2c3d4-1234-5678-9abc-def012345678"
+  web3formsKey: "35245901-1191-49a9-9801-e9845dd06588",
 
   /* ----------------------------------------------------------------------
      6) (Option avancée) FORMULAIRES via Formspree — laissez "" si vous
