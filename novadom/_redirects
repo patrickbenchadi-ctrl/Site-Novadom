@@ -1,0 +1,5 @@
+# Redirections de sécurité (anciennes variantes d'URL -> URL canonique)
+/index.html              /              301
+/*.html                  /:splat/       301
+# Filet de sécurité : tout chemin inconnu renvoie l'accueil
+/*                       /index.html    200

@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Souscrire une domiciliation commerciale en ligne | Novadom</title>
+<meta name="description" content="Domiciliez votre société en ligne en quelques minutes : choisissez votre formule, déposez vos pièces, relisez votre contrat et payez en ligne en toute sécurité.">
+<link rel="canonical" href="https://www.boulogne-domiciliation.com/domiciliation-en-ligne/">
+<meta property="og:title" content="Souscrire une domiciliation commerciale en ligne | Novadom">
+<meta property="og:description" content="Domiciliez votre société en ligne en quelques minutes : choisissez votre formule, déposez vos pièces, relisez votre contrat et payez en ligne en toute sécurité.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+/* =========================================================================
+   NOVADOM — Domiciliation commerciale
+   Système de design. Direction : "L'adresse de prestige gravée dans le laiton".
+   Palette : encre marine + laiton patiné + papier chaud.
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root{
+  /* Couleurs */
+  --ink:#0E1E33;
+  --ink-soft:#1B3354;
+  --ink-line:#22344f;
+  --brass:#B6883F;
+  --brass-2:#D8B677;
+  --brass-deep:#8A6526;
+  --paper:#FBF9F4;
+  --paper-2:#F3EEE2;
+  --paper-3:#ECE5D5;
+  --line:#E4DCC9;
+  --line-soft:#EEE8DA;
+  --text:#16223A;
+  --muted:#5A6A82;
+  --muted-2:#8492A6;
+  --white:#ffffff;
+  --green:#2C7A55;
+  --green-bg:#E7F2EB;
+  --red:#B23A3A;
+
+  /* Typo */
+  --display:'Fraunces',Georgia,serif;
+  --body:'Hanken Grotesk',system-ui,-apple-system,sans-serif;
+  --mono:'Space Mono','SFMono-Regular',monospace;
+
+  /* Échelle */
+  --container:1180px;
+  --container-narrow:880px;
+  --radius:14px;
+  --radius-sm:10px;
+  --radius-lg:22px;
+  --shadow-sm:0 1px 2px rgba(14,30,51,.05),0 2px 8px rgba(14,30,51,.04);
+  --shadow:0 8px 30px rgba(14,30,51,.08),0 2px 8px rgba(14,30,51,.05);
+  --shadow-lg:0 24px 60px rgba(14,30,51,.16);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+/* ---------- Reset ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--paper);color:var(--text);
+  font-family:var(--body);font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:500;line-height:1.08;letter-spacing:-.01em;color:var(--ink)}
+p{margin:0 0 1em}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--brass);outline-offset:2px;border-radius:4px}
+
+/* ---------- Utilitaires ---------- */
+.container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:24px}
+.narrow{max-width:var(--container-narrow)}
+.section{padding-block:96px}
+.section--tight{padding-block:64px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-deep);margin:0 0 16px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--brass);display:inline-block}
+.center{text-align:center}
+.center .eyebrow{justify-content:center}
+.lead{font-size:clamp(18px,2vw,20px);color:var(--muted);line-height:1.55}
+.muted{color:var(--muted)}
+.hide{display:none !important}
+.nowrap{white-space:nowrap}
+
+/* ---------- Boutons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-weight:600;font-size:15.5px;letter-spacing:.01em;
+  padding:14px 26px;border-radius:999px;border:1px solid transparent;
+  transition:transform .25s var(--ease),background .25s,box-shadow .25s,color .2s;
+  cursor:pointer;line-height:1;
+}
+.btn svg{width:17px;height:17px}
+.btn--primary{background:var(--ink);color:#fff;box-shadow:0 6px 18px rgba(14,30,51,.22)}
+.btn--primary:hover{background:var(--ink-soft);transform:translateY(-2px);box-shadow:0 12px 26px rgba(14,30,51,.28)}
+.btn--brass{background:linear-gradient(180deg,var(--brass-2),var(--brass));color:#23170a;box-shadow:0 6px 18px rgba(182,136,63,.35)}
+.btn--brass:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(182,136,63,.45)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn--ghost:hover{background:var(--white);border-color:var(--brass);transform:translateY(-2px)}
+.btn--light{background:#fff;color:var(--ink);box-shadow:var(--shadow-sm)}
+.btn--light:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn--lg{padding:17px 34px;font-size:16.5px}
+.btn--block{width:100%}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none !important;box-shadow:none}
+
+/* ---------- En-tête ---------- */
+.site-header{position:sticky;top:0;z-index:60;background:rgba(251,249,244,.82);backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid var(--line-soft);transition:box-shadow .3s}
+.site-header.is-scrolled{box-shadow:0 6px 22px rgba(14,30,51,.07)}
+.nav{display:flex;align-items:center;gap:26px;height:74px}
+.brand{display:flex;align-items:center;gap:11px;margin-right:auto}
+.brand__mark{width:34px;height:34px;border-radius:8px;background:linear-gradient(150deg,var(--ink),var(--ink-soft));display:grid;place-items:center;color:var(--brass-2);font-family:var(--display);font-weight:600;font-size:20px;border:1px solid rgba(216,182,119,.4)}
+.brand__name{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.02em;color:var(--ink)}
+.brand__name b{color:var(--brass-deep);font-weight:600}
+.nav__links{display:flex;align-items:center;gap:4px}
+.nav__links a{font-size:15px;font-weight:500;color:var(--ink-soft);padding:9px 14px;border-radius:8px;transition:background .2s,color .2s}
+.nav__links a:hover{background:var(--paper-2);color:var(--ink)}
+.nav__cta{display:flex;align-items:center;gap:12px}
+.nav__phone{font-weight:600;font-size:15px;color:var(--ink);display:inline-flex;align-items:center;gap:7px}
+.nav__phone svg{width:16px;height:16px;color:var(--brass-deep)}
+.nav__toggle{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;background:#fff;align-items:center;justify-content:center}
+.nav__toggle span,.nav__toggle span::before,.nav__toggle span::after{content:"";display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;position:relative;transition:transform .25s}
+.nav__toggle span::before{position:absolute;top:-6px}
+.nav__toggle span::after{position:absolute;top:6px}
+.nav.is-open .nav__toggle span{background:transparent}
+.nav.is-open .nav__toggle span::before{transform:translateY(6px) rotate(45deg)}
+.nav.is-open .nav__toggle span::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* ---------- Plaque en laiton (signature) ---------- */
+.plaque{
+  --pl-bg1:#E9D7A8;--pl-bg2:#C7A560;--pl-bg3:#A07E3A;
+  position:relative;border-radius:12px;padding:34px 30px;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.55),rgba(255,255,255,0) 40%),
+    linear-gradient(160deg,var(--pl-bg1),var(--pl-bg2) 55%,var(--pl-bg3));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -10px 24px rgba(91,66,20,.35),0 22px 50px rgba(14,30,51,.28);
+  color:#3a2c10;overflow:hidden;
+}
+.plaque::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.45) 48%,transparent 58%);opacity:.6;pointer-events:none}
+.plaque__screw{position:absolute;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f4e6c0,#9c7b38 70%,#6e5526);box-shadow:inset 0 1px 1px rgba(255,255,255,.6),0 1px 2px rgba(0,0,0,.3)}
+.plaque__screw::before{content:"";position:absolute;inset:4px;border-top:1.5px solid rgba(60,44,16,.55);transform:rotate(40deg)}
+.plaque__screw.tl{top:12px;left:12px}.plaque__screw.tr{top:12px;right:12px}
+.plaque__screw.bl{bottom:12px;left:12px}.plaque__screw.br{bottom:12px;right:12px}
+.plaque__label{font-family:var(--mono);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#6b521f;margin-bottom:14px}
+.plaque__name{font-family:var(--display);font-weight:600;font-size:clamp(22px,3.2vw,30px);letter-spacing:.04em;text-transform:uppercase;line-height:1.12;text-shadow:0 1px 0 rgba(255,255,255,.45),0 2px 2px rgba(91,66,20,.25);word-break:break-word}
+.plaque__addr{margin-top:12px;font-family:var(--display);font-size:15.5px;letter-spacing:.14em;text-transform:uppercase;color:#4a3917;line-height:1.7}
+.plaque__rule{height:1px;background:linear-gradient(90deg,transparent,rgba(91,66,20,.4),transparent);margin:16px 0}
+.plaque__agr{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:#6b521f;text-transform:uppercase}
+
+/* ---------- Héros ---------- */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(120% 90% at 88% -10%,rgba(216,182,119,.16),transparent 55%),
+  radial-gradient(80% 70% at -5% 10%,rgba(27,51,84,.06),transparent 50%);
+  border-bottom:1px solid var(--line-soft)}
+.hero__inner{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;padding-block:84px}
+.hero h1{font-size:clamp(38px,5.4vw,64px);line-height:1.02;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--brass-deep)}
+.hero__sub{margin:22px 0 30px;max-width:30em}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero__trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
+.trust-item{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:500;color:var(--ink-soft)}
+.trust-item svg{width:18px;height:18px;color:var(--brass-deep);flex:none}
+.hero__visual{position:relative}
+.hero__visual .plaque{transform:rotate(-2deg)}
+.hero__chip{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 16px;box-shadow:var(--shadow);display:flex;align-items:center;gap:11px;font-size:13.5px;font-weight:600;color:var(--ink)}
+.hero__chip svg{width:30px;height:30px;color:var(--green);background:var(--green-bg);border-radius:8px;padding:6px;flex:none}
+.hero__chip.c1{top:-18px;right:6%;animation:float 6s ease-in-out infinite}
+.hero__chip.c2{bottom:-16px;left:-4%;animation:float 6s ease-in-out infinite .8s}
+@keyframes float{50%{transform:translateY(-9px)}}
+@media (prefers-reduced-motion:reduce){.hero__chip{animation:none}}
+
+/* ---------- Bandeau confiance ---------- */
+.bandeau{background:var(--ink);color:#cdd7e6}
+.bandeau .container{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;padding-block:22px}
+.bandeau__item{display:flex;align-items:center;gap:11px;font-size:14.5px}
+.bandeau__item b{color:#fff;font-weight:600;font-family:var(--display);font-size:24px;line-height:1;margin-right:2px}
+.bandeau__item svg{width:20px;height:20px;color:var(--brass-2)}
+
+/* ---------- Titres de section ---------- */
+.section-head{max-width:620px;margin-bottom:48px}
+.section-head.center{margin-inline:auto}
+.section-head h2{font-size:clamp(28px,3.6vw,42px);line-height:1.06}
+.section-head p{margin-top:16px}
+
+/* ---------- Étapes (process) ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:step}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow-sm)}
+.step__n{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--brass-deep);letter-spacing:.1em}
+.step h3{font-size:19px;margin:14px 0 8px}
+.step p{font-size:15px;color:var(--muted);margin:0}
+.step__line{position:absolute;top:36px;right:-13px;width:26px;height:1px;background:var(--line);z-index:1}
+.step:last-child .step__line{display:none}
+
+/* ---------- Offres / tarifs ---------- */
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.offer{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px 28px;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s,border-color .3s;position:relative}
+.offer:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--brass-2)}
+.offer--featured{border-color:var(--brass);box-shadow:0 18px 44px rgba(182,136,63,.18)}
+.offer--featured::before{content:"Le plus choisi";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(180deg,var(--brass-2),var(--brass));color:#23170a;font-size:12px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:999px;white-space:nowrap}
+.offer__name{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-deep)}
+.offer__desc{font-size:14.5px;color:var(--muted);margin:8px 0 18px;min-height:42px}
+.offer__price{display:flex;align-items:baseline;gap:6px;margin-bottom:4px}
+.offer__price b{font-family:var(--display);font-size:48px;font-weight:600;color:var(--ink);line-height:1}
+.offer__price span{font-size:15px;color:var(--muted);font-weight:500}
+.offer__ht{font-size:13px;color:var(--muted-2);margin-bottom:22px}
+.offer__list{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.offer__list li{display:flex;gap:11px;font-size:15px;color:var(--ink-soft);align-items:flex-start}
+.offer__list svg{width:19px;height:19px;color:var(--green);flex:none;margin-top:1px}
+.offer__list li.off{color:var(--muted-2)}
+.offer__list li.off svg{color:var(--muted-2);opacity:.6}
+.offer .btn{margin-top:auto}
+
+/* ---------- Tableau statut (mini-grille tarifs) ---------- */
+.pricegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px}
+.pricegrid__c{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px;text-align:center}
+.pricegrid__c b{display:block;font-family:var(--display);font-size:34px;color:var(--ink);line-height:1}
+.pricegrid__c span{font-size:13px;color:var(--muted)}
+.pricegrid__c small{display:block;margin-top:8px;font-size:14px;color:var(--ink-soft);font-weight:600}
+
+/* ---------- Bloc média (texte + visuel) ---------- */
+.media{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.media--rev .media__txt{order:2}
+.media__visual{border-radius:var(--radius-lg);overflow:hidden;background:linear-gradient(160deg,var(--ink),var(--ink-soft));aspect-ratio:4/3;position:relative;box-shadow:var(--shadow);display:grid;place-items:center;padding:30px}
+.media__txt h2{font-size:clamp(26px,3.2vw,36px)}
+.media__txt p{margin-top:14px}
+.checklist{display:flex;flex-direction:column;gap:13px;margin:22px 0 26px}
+.checklist li{display:flex;gap:12px;font-size:16px;color:var(--ink-soft)}
+.checklist svg{width:21px;height:21px;color:var(--brass-deep);flex:none;margin-top:1px}
+
+/* enveloppe stylisée pour les blocs média */
+.envelope{width:78%;max-width:340px;background:#fff;border-radius:10px;box-shadow:var(--shadow-lg);padding:18px;transform:rotate(-3deg)}
+.envelope__bar{height:9px;border-radius:5px;background:var(--paper-3);margin-bottom:9px}
+.envelope__bar.s{width:55%}
+.envelope__stamp{position:absolute;top:14%;right:12%;width:74px;height:88px;background:repeating-linear-gradient(45deg,#fff,#fff 6px,#f4e6c0 6px,#f4e6c0 7px);border:2px dashed rgba(255,255,255,.5);border-radius:6px;display:grid;place-items:center;color:var(--brass-deep);transform:rotate(8deg)}
+.envelope__stamp svg{width:34px;height:34px}
+
+/* écran "numericloud" mock */
+.mockwin{width:88%;max-width:420px;background:#fff;border-radius:12px;box-shadow:var(--shadow-lg);overflow:hidden}
+.mockwin__bar{display:flex;gap:7px;padding:12px 14px;background:var(--paper-2);border-bottom:1px solid var(--line)}
+.mockwin__bar i{width:11px;height:11px;border-radius:50%;background:var(--line);display:block}
+.mockwin__bar i:first-child{background:#e0a3a3}
+.mockwin__body{padding:18px}
+.mockrow{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line-soft)}
+.mockrow:last-child{border:0}
+.mockrow svg{width:30px;height:30px;color:var(--brass-deep);background:var(--paper-2);border-radius:7px;padding:6px;flex:none}
+.mockrow .t{flex:1}
+.mockrow .t b{display:block;font-size:13.5px;color:var(--ink)}
+.mockrow .t span{font-size:12px;color:var(--muted)}
+.mockrow .badge{font-size:11px;font-weight:700;color:var(--green);background:var(--green-bg);padding:4px 9px;border-radius:999px}
+
+/* ---------- Cartes "pourquoi" ---------- */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card__ico{width:48px;height:48px;border-radius:12px;background:var(--paper-2);display:grid;place-items:center;color:var(--brass-deep);margin-bottom:18px}
+.card__ico svg{width:24px;height:24px}
+.card h3{font-size:20px;margin-bottom:9px}
+.card p{font-size:15px;color:var(--muted);margin:0}
+
+/* ---------- Bandeau CTA ---------- */
+.cta-band{background:linear-gradient(155deg,var(--ink),var(--ink-soft));color:#fff;border-radius:var(--radius-lg);padding:56px 48px;display:grid;grid-template-columns:1.4fr auto;gap:36px;align-items:center;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.cta-band::after{content:"";position:absolute;right:-60px;top:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(216,182,119,.22),transparent 70%)}
+.cta-band h2{color:#fff;font-size:clamp(26px,3.4vw,38px)}
+.cta-band p{color:#bfcadb;margin:14px 0 0;max-width:40em}
+.cta-band__actions{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1}
+
+/* ---------- FAQ ---------- */
+.faq{display:flex;flex-direction:column;gap:12px;max-width:820px;margin-inline:auto}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:22px 24px;font-weight:600;font-size:17px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--display);font-size:26px;color:var(--brass-deep);transition:transform .25s;line-height:1}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 24px 22px;margin:0;color:var(--muted);font-size:15.5px}
+
+/* ---------- Pied de page ---------- */
+.site-footer{background:var(--ink);color:#aeb9cb;margin-top:0;padding-block:64px 30px}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:40px}
+.site-footer .brand__name{color:#fff}
+.site-footer .brand__name b{color:var(--brass-2)}
+.footer-about{margin-top:16px;font-size:14.5px;line-height:1.6;max-width:30em}
+.footer-col h4{font-family:var(--body);font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--brass-2);margin-bottom:16px}
+.footer-col a{display:block;font-size:14.5px;padding:6px 0;color:#aeb9cb;transition:color .2s}
+.footer-col a:hover{color:#fff}
+.footer-contact{font-size:14.5px;line-height:1.7}
+.footer-contact a{color:#fff;font-weight:600}
+.footer-bottom{margin-top:44px;padding-top:24px;border-top:1px solid var(--ink-line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:13px;color:#8494ab}
+.footer-bottom a{color:#aeb9cb}
+.footer-agr{display:inline-flex;align-items:center;gap:8px;background:var(--ink-soft);border:1px solid var(--ink-line);border-radius:999px;padding:7px 14px;color:#d7dfeb;font-size:12.5px;font-weight:600}
+.footer-agr svg{width:15px;height:15px;color:var(--brass-2)}
+
+/* =========================================================================
+   TUNNEL DE COMMANDE
+   ========================================================================= */
+.tunnel{background:var(--paper-2);min-height:70vh}
+.tunnel__head{padding-block:48px 0;text-align:center}
+.tunnel__head h1{font-size:clamp(30px,4vw,46px)}
+.tunnel__head p{margin-top:14px}
+
+.stepper{display:flex;justify-content:center;gap:0;margin:34px auto 0;max-width:760px;flex-wrap:wrap}
+.stepper__i{display:flex;align-items:center;gap:10px;color:var(--muted-2);font-size:14px;font-weight:600}
+.stepper__i .dot{width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.stepper__i.is-active .dot{background:var(--ink);border-color:var(--ink);color:#fff}
+.stepper__i.is-done .dot{background:var(--green);border-color:var(--green);color:#fff}
+.stepper__i.is-active{color:var(--ink)}
+.stepper__sep{width:34px;height:1.5px;background:var(--line);margin:0 8px}
+
+.tunnel__grid{display:grid;grid-template-columns:1fr 360px;gap:34px;align-items:start;padding-block:40px 90px}
+
+/* panneau formulaire */
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:36px}
+.panel h2{font-size:24px;margin-bottom:6px}
+.panel__intro{color:var(--muted);font-size:15px;margin-bottom:26px}
+.fstep{display:none}
+.fstep.is-active{display:block;animation:fade .35s var(--ease)}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.field{margin-bottom:18px}
+.field label{display:block;font-size:14px;font-weight:600;color:var(--ink-soft);margin-bottom:7px}
+.field .req{color:var(--red)}
+.field input,.field select,.field textarea{
+  width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;
+  font-family:inherit;font-size:15.5px;color:var(--text);background:#fff;transition:border-color .2s,box-shadow .2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--brass);box-shadow:0 0 0 3px rgba(182,136,63,.15)}
+.field input.invalid,.field select.invalid{border-color:var(--red);box-shadow:0 0 0 3px rgba(178,58,58,.12)}
+.field textarea{min-height:90px;resize:vertical}
+.field__hint{font-size:12.5px;color:var(--muted-2);margin-top:6px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+
+/* cartes de choix (statut / formule / option) */
+.choices{display:grid;gap:12px;margin-bottom:8px}
+.choices--3{grid-template-columns:repeat(3,1fr)}
+.choices--2{grid-template-columns:repeat(2,1fr)}
+.choice{position:relative;border:1.5px solid var(--line);border-radius:var(--radius);padding:18px 16px;cursor:pointer;transition:border-color .2s,box-shadow .2s,background .2s;display:block}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice__top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.choice__name{font-weight:600;font-size:15.5px;color:var(--ink)}
+.choice__price{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--brass-deep);white-space:nowrap}
+.choice__desc{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.45}
+.choice__check{position:absolute;top:14px;right:14px;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;color:#fff;transition:.2s}
+.choice__check svg{width:12px;height:12px;opacity:0;transition:.2s}
+.choice:hover{border-color:var(--brass-2)}
+.choice:has(input:checked){border-color:var(--brass);background:#fffdf8;box-shadow:0 0 0 3px rgba(182,136,63,.12)}
+.choice:has(input:checked) .choice__check{background:var(--brass);border-color:var(--brass)}
+.choice:has(input:checked) .choice__check svg{opacity:1}
+
+/* upload de documents */
+.dropzone{border:1.5px dashed var(--line);border-radius:var(--radius);padding:22px;text-align:center;background:var(--paper);transition:border-color .2s,background .2s;cursor:pointer;display:block}
+.dropzone:hover,.dropzone.drag{border-color:var(--brass);background:#fffdf8}
+.dropzone svg{width:30px;height:30px;color:var(--brass-deep);margin-bottom:8px}
+.dropzone b{display:block;font-size:15px;color:var(--ink)}
+.dropzone span{font-size:13px;color:var(--muted)}
+.doc-item{margin-bottom:14px}
+.doc-item>label{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.filechip{display:flex;align-items:center;gap:10px;margin-top:10px;background:var(--green-bg);border:1px solid #bfe0cd;border-radius:10px;padding:9px 12px;font-size:13.5px;color:#1f5e41;font-weight:600}
+.filechip svg{width:18px;height:18px;flex:none}
+.filechip button{margin-left:auto;background:none;border:0;color:#1f5e41;font-weight:700;font-size:16px;line-height:1;padding:2px 4px}
+
+/* récapitulatif (colonne droite) */
+.summary{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden;position:sticky;top:90px}
+.summary__head{background:linear-gradient(160deg,var(--ink),var(--ink-soft));color:#fff;padding:22px 24px}
+.summary__head .plaque{padding:18px 16px;margin-bottom:0}
+.summary__body{padding:22px 24px}
+.summary__line{display:flex;justify-content:space-between;gap:12px;font-size:14.5px;padding:9px 0;border-bottom:1px dashed var(--line-soft);color:var(--ink-soft)}
+.summary__line span:last-child{font-family:var(--mono);font-weight:700;color:var(--ink)}
+.summary__line.muted span{color:var(--muted)}
+.summary__total{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;padding-top:16px;border-top:2px solid var(--line)}
+.summary__total .lbl{font-weight:600;color:var(--ink)}
+.summary__total .val{text-align:right}
+.summary__total .val b{font-family:var(--display);font-size:30px;color:var(--ink);display:block;line-height:1}
+.summary__total .val small{font-size:12px;color:var(--muted)}
+.summary__pay{margin-top:16px;background:var(--paper-2);border-radius:10px;padding:14px 16px;font-size:13.5px;color:var(--ink-soft)}
+.summary__pay b{font-family:var(--mono);color:var(--brass-deep)}
+.secure-note{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);margin-top:14px;justify-content:center}
+.secure-note svg{width:15px;height:15px;color:var(--green)}
+
+/* navigation du tunnel */
+.tunnel-nav{display:flex;justify-content:space-between;gap:14px;margin-top:30px;padding-top:24px;border-top:1px solid var(--line-soft)}
+
+/* aperçu du contrat */
+.contract-preview{border:1px solid var(--line);border-radius:var(--radius);background:#fff;max-height:460px;overflow:auto;position:relative}
+.contract-preview__wm{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;z-index:2}
+.contract-preview__wm span{font-family:var(--display);font-size:clamp(40px,9vw,90px);font-weight:600;color:rgba(182,136,63,.13);transform:rotate(-24deg);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.contract-doc{padding:34px 38px;font-size:13px;line-height:1.7;color:#2a3550;position:relative;z-index:1}
+.contract-doc h1{font-family:var(--display);font-size:21px;text-align:center;margin-bottom:4px}
+.contract-doc .sub{text-align:center;font-size:12px;color:var(--muted);margin-bottom:22px}
+.contract-doc h2{font-family:var(--body);font-size:13.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--brass-deep);margin:22px 0 8px;border-bottom:1px solid var(--line-soft);padding-bottom:5px}
+.contract-doc p{margin:0 0 10px}
+.contract-doc .party{background:var(--paper-2);border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.contract-doc .fill{color:var(--ink);font-weight:600;background:rgba(182,136,63,.12);padding:1px 5px;border-radius:4px}
+.contract-doc .sign{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:26px}
+.contract-doc .sign div{border-top:1px solid var(--line);padding-top:8px;font-size:11.5px;color:var(--muted)}
+.contract-doc table.rc{width:100%;border-collapse:collapse;margin:8px 0}
+.contract-doc table.rc td{border:1px solid var(--line);padding:7px 10px;font-size:12px}
+.contract-doc table.rc td:first-child{color:var(--muted);width:46%}
+
+.consent{display:flex;gap:12px;align-items:flex-start;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:18px;cursor:pointer}
+.consent input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--brass)}
+.consent span{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+
+.alert{display:flex;gap:11px;background:#FFF7E8;border:1px solid #F0DBA6;border-radius:12px;padding:14px 16px;font-size:13.5px;color:#7a5a13;margin-bottom:22px}
+.alert svg{width:20px;height:20px;color:var(--brass-deep);flex:none;margin-top:1px}
+
+/* page merci */
+.merci{min-height:72vh;display:grid;place-items:center;text-align:center;padding-block:80px;background:
+  radial-gradient(70% 60% at 50% 0%,rgba(216,182,119,.16),transparent 60%)}
+.merci__ico{width:84px;height:84px;border-radius:50%;background:var(--green-bg);display:grid;place-items:center;margin:0 auto 24px;color:var(--green)}
+.merci__ico svg{width:42px;height:42px}
+.merci h1{font-size:clamp(30px,4vw,44px)}
+.merci .lead{margin:16px auto 30px;max-width:34em}
+.merci__steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:760px;margin:36px auto 0;text-align:left}
+.merci__steps .card p{margin-top:6px}
+
+/* statut envoi e-mail (page merci) */
+.send-status{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;padding:10px 16px;border-radius:999px;margin-top:8px}
+.send-status.pending{background:var(--paper-2);color:var(--muted)}
+.send-status.ok{background:var(--green-bg);color:var(--green)}
+.send-status.err{background:#FBEAEA;color:var(--red)}
+.send-status svg{width:16px;height:16px}
+
+/* pages de contenu génériques */
+.page-hero{background:linear-gradient(160deg,var(--ink),var(--ink-soft));color:#fff;padding-block:64px}
+.page-hero .eyebrow{color:var(--brass-2)}
+.page-hero .eyebrow::before{background:var(--brass-2)}
+.page-hero h1{color:#fff;font-size:clamp(30px,4.4vw,48px);max-width:18em}
+.page-hero p{color:#bfcadb;margin-top:16px;max-width:42em}
+.prose{max-width:760px}
+.prose h2{font-size:26px;margin:38px 0 14px}
+.prose h3{font-size:20px;margin:26px 0 10px}
+.prose p{color:var(--ink-soft);margin-bottom:14px}
+.prose ul{margin:0 0 16px;padding-left:0}
+.prose ul li{position:relative;padding-left:28px;margin-bottom:10px;color:var(--ink-soft)}
+.prose ul li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:2px;background:var(--brass);transform:rotate(45deg)}
+.prose a{color:var(--brass-deep);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.note-box{background:var(--paper-2);border-left:3px solid var(--brass);border-radius:0 10px 10px 0;padding:18px 22px;margin:22px 0}
+.note-box b{color:var(--ink)}
+
+/* formulaire contact simple */
+.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:start}
+.contact-card{background:var(--ink);color:#cdd7e6;border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow)}
+.contact-card h3{color:#fff;margin-bottom:18px}
+.contact-card .ci{display:flex;gap:13px;margin-bottom:18px;font-size:15px}
+.contact-card .ci svg{width:22px;height:22px;color:var(--brass-2);flex:none}
+.contact-card .ci b{color:#fff;display:block}
+
+/* messages de statut des formulaires contact/rappel */
+.form-status{display:none;margin-top:14px;padding:13px 16px;border-radius:12px;font-size:14.5px;font-weight:600}
+.form-status.ok{background:var(--green-bg);color:var(--green);border:1px solid #bfe0cd}
+.form-status.err{background:#FBEAEA;color:var(--red);border:1px solid #f0c9c9}
+
+/* reveal au scroll — masqué seulement si le JS fonctionne (sinon visible) */
+.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
+
+/* =========================================================================
+   RESPONSIVE
+   ========================================================================= */
+@media (max-width:1000px){
+  .tunnel__grid{grid-template-columns:1fr}
+  .summary{position:static}
+  .hero__inner{gap:44px}
+}
+@media (max-width:860px){
+  .nav__links,.nav__phone{display:none}
+  .nav.is-open .nav__links{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--paper);border-bottom:1px solid var(--line);padding:14px 20px 22px;gap:4px;box-shadow:var(--shadow)}
+  .nav.is-open .nav__links a{padding:13px 12px;font-size:16px}
+  .nav__toggle{display:flex}
+  .nav__cta .btn{display:none}
+  .hero__inner{grid-template-columns:1fr;padding-block:54px}
+  .hero__visual{max-width:420px;margin-top:8px}
+  .media{grid-template-columns:1fr;gap:34px}
+  .media--rev .media__txt{order:0}
+  .steps{grid-template-columns:1fr 1fr}
+  .step__line{display:none}
+  .offers,.grid3,.pricegrid,.merci__steps,.contact-grid{grid-template-columns:1fr}
+  .cta-band{grid-template-columns:1fr;padding:38px 28px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .section{padding-block:68px}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .container{padding-inline:18px}
+  .panel{padding:24px 20px}
+  .choices--3,.choices--2,.row2,.row3{grid-template-columns:1fr}
+  .steps,.footer-grid{grid-template-columns:1fr}
+  .stepper__i .lbl{display:none}
+  .stepper__sep{width:18px;margin:0 4px}
+  .bandeau .container{justify-content:flex-start}
+}
+
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E1E33'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='20' fill='%23D8B677' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="../index.html" aria-label="Novadom, accueil">
+        <span class="brand__mark">N</span>
+        <span class="brand__name">Nova<b>dom</b></span>
+      </a>
+      <div class="nav__links">
+        <a href="../domiciliation-commerciale/index.html">Domiciliation</a>
+        <a href="../tarifs-domiciliation-entreprise/index.html">Tarifs</a>
+        <a href="../creation-entreprise/index.html">Création d'entreprise</a>
+        <a href="../contact/index.html">Contact</a>
+      </div>
+      <div class="nav__cta">
+        <a class="nav__phone" href="tel:+33186040887"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-3 2a14 14 0 006 6l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2z"/></svg> 01 86 04 08 87</a>
+        <a class="btn btn--brass" href="../domiciliation-en-ligne/index.html">Souscrire en ligne</a>
+      </div>
+      <button class="nav__toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="tunnel" id="tunnel">
+  <div class="container">
+    <div class="tunnel__head">
+      <p class="eyebrow center">Souscription en ligne</p>
+      <h1>Domiciliez votre entreprise en ligne</h1>
+      <p class="lead">Quelques minutes suffisent. Vous relisez votre contrat avant de payer — aucun engagement caché.</p>
+      <div class="stepper"><div class="stepper__i is-active" data-step="1"><span class="dot">1</span><span class="lbl">Formule</span></div><div class="stepper__sep"></div><div class="stepper__i" data-step="2"><span class="dot">2</span><span class="lbl">Informations</span></div><div class="stepper__sep"></div><div class="stepper__i" data-step="3"><span class="dot">3</span><span class="lbl">Pièces</span></div><div class="stepper__sep"></div><div class="stepper__i" data-step="4"><span class="dot">4</span><span class="lbl">Contrat</span></div><div class="stepper__sep"></div><div class="stepper__i" data-step="5"><span class="dot">5</span><span class="lbl">Paiement</span></div></div>
+    </div>
+
+    <div class="tunnel__grid">
+      <!-- PANNEAU -->
+      <div class="panel">
+
+        <!-- Étape 1 : formule -->
+        <section class="fstep is-active" data-step="1">
+          <h2>Votre formule</h2>
+          <p class="panel__intro">Sélectionnez le statut de votre structure, puis ajoutez vos options de gestion du courrier.</p>
+          <div id="err-1" class="alert hide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><span>Merci de compléter ou corriger les champs surlignés avant de continuer.</span></div>
+          <div class="field"><label>Votre structure <span class="req">*</span></label><div class="choices" id="statut-choices"></div></div>
+          <div class="field"><label>Options de courrier</label><div class="choices choices--1" id="option-choices"></div></div>
+          <div class="field"><label for="f-dateEffet">Date d'effet souhaitée <span class="req">*</span></label><input id="f-dateEffet" type="date" placeholder="" value="" data-required></div>
+        </section>
+
+        <!-- Étape 2 : informations -->
+        <section class="fstep" data-step="2">
+          <h2>Vos informations</h2>
+          <p class="panel__intro">Le responsable légal et la société à domicilier.</p>
+          <div id="err-2" class="alert hide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><span>Merci de compléter ou corriger les champs surlignés avant de continuer.</span></div>
+          <h3 style="font-family:var(--body);font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--brass-deep);margin:4px 0 14px">Responsable légal</h3>
+          <div class="row3">
+            <div class="field"><label for="f-civilite">Civilité <span class="req">*</span></label><select id="f-civilite" data-required><option value="" disabled selected>Choisir…</option><option value="Monsieur">Monsieur</option><option value="Madame">Madame</option></select></div>
+            <div class="field"><label for="f-prenom">Prénom <span class="req">*</span></label><input id="f-prenom" type="text" placeholder="" value="" data-required></div>
+            <div class="field"><label for="f-nom">Nom <span class="req">*</span></label><input id="f-nom" type="text" placeholder="" value="" data-required></div>
+          </div>
+          <div class="field"><label for="f-qualite">Qualité <span class="req">*</span></label><select id="f-qualite" data-required><option value="" disabled selected>Choisir…</option><option value="Gérant">Gérant</option><option value="Président">Président</option><option value="Entrepreneur individuel">Entrepreneur individuel</option><option value="Particulier">Particulier</option></select></div>
+          <div class="field"><label for="f-adresseClient">Adresse personnelle <span class="req">*</span></label><input id="f-adresseClient" type="text" placeholder="" value="" data-required></div>
+          <div class="row3">
+            <div class="field"><label for="f-cpClient">Code postal <span class="req">*</span></label><input id="f-cpClient" type="text" placeholder="" value="" data-required data-format="cp"></div>
+            <div class="field"><label for="f-villeClient">Ville <span class="req">*</span></label><input id="f-villeClient" type="text" placeholder="" value="" data-required></div>
+            <div class="field"><label for="f-paysClient">Pays</label><input id="f-paysClient" type="text" placeholder="" value="France"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-telClient">Téléphone <span class="req">*</span></label><input id="f-telClient" type="tel" placeholder="" value="" data-required data-format="tel"></div>
+            <div class="field"><label for="f-emailClient">E-mail <span class="req">*</span></label><input id="f-emailClient" type="email" placeholder="vous@exemple.com" value="" data-required data-format="email"></div>
+          </div>
+          <h3 style="font-family:var(--body);font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--brass-deep);margin:24px 0 14px">Société à domicilier</h3>
+          <div class="row2">
+            <div class="field"><label for="f-raisonSociale">Raison sociale <span class="req">*</span></label><input id="f-raisonSociale" type="text" placeholder="" value="" data-required></div>
+            <div class="field"><label for="f-rcsClient">N° RCS / SIREN (si déjà immatriculée)</label><input id="f-rcsClient" type="text" placeholder="" value="" data-format="siren"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-capital">Capital social</label><input id="f-capital" type="text" placeholder="" value="" data-format="capital"></div>
+            <div class="field"><label for="f-activite">Activité principale</label><input id="f-activite" type="text" placeholder="" value=""></div>
+          </div>
+          <h3 style="font-family:var(--body);font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--brass-deep);margin:24px 0 14px">Pièce d'identité</h3>
+          <div class="row2">
+            <div class="field"><label for="f-pieceType">Type <span class="req">*</span></label><select id="f-pieceType" data-required><option value="" disabled selected>Choisir…</option><option value="Carte Nationale d'Identité">Carte Nationale d'Identité</option><option value="Passeport">Passeport</option></select></div>
+            <div class="field"><label for="f-pieceNum">Numéro <span class="req">*</span></label><input id="f-pieceNum" type="text" placeholder="" value="" data-required data-format="upper"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-pieceDate">Date de délivrance</label><input id="f-pieceDate" type="date" placeholder="" value=""></div>
+            <div class="field"><label for="f-pieceLieu">Lieu de délivrance</label><input id="f-pieceLieu" type="text" placeholder="" value=""></div>
+          </div>
+        </section>
+
+        <!-- Étape 3 : pièces -->
+        <section class="fstep" data-step="3">
+          <h2>Vos pièces justificatives</h2>
+          <p class="panel__intro">Déposez les documents requis. Formats acceptés : PDF, JPG, PNG (8 Mo max.).</p>
+          <div id="err-3" class="alert hide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><span>Merci de compléter ou corriger les champs surlignés avant de continuer.</span></div>
+          <div id="docs"></div>
+          <div class="secure-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg> Vos documents sont transmis de façon sécurisée à notre équipe.</div>
+        </section>
+
+        <!-- Étape 4 : contrat -->
+        <section class="fstep" data-step="4">
+          <h2>Votre contrat de domiciliation</h2>
+          <p class="panel__intro">Relisez votre contrat, pré-rempli avec vos informations. Il vous sera adressé par e-mail après paiement.</p>
+          <div class="alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5"/></svg><span><b>Modèle à valider.</b> Ce contrat est un modèle conforme aux obligations légales, à faire valider par votre conseil avant exploitation.</span></div>
+          <div id="err-4" class="alert hide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><span>Merci de compléter ou corriger les champs surlignés avant de continuer.</span></div>
+          <div class="contract-preview" id="contract-preview">
+            <div class="contract-preview__wm"><span>Spécimen</span></div>
+            <div class="contract-doc-wrap"></div>
+          </div>
+          <label class="consent"><input type="checkbox" id="consent"><span>J'ai lu et j'accepte les termes du contrat de domiciliation, ainsi que la durée minimale de 3 mois et la caution contractuelle de 3 mois. Je comprends que le contrat me sera adressé pour signature après vérification de mon dossier.</span></label>
+        </section>
+
+        <!-- Étape 5 : paiement -->
+        <section class="fstep" data-step="5">
+          <h2>Récapitulatif & paiement</h2>
+          <p class="panel__intro">Vérifiez votre commande avant de procéder au paiement sécurisé.</p>
+          <div id="final-recap" style="margin-bottom:18px"></div>
+          <div class="alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg><span>Après votre paiement, vous recevrez immédiatement votre <b>contrat (spécimen)</b> par e-mail. Notre équipe vérifie votre dossier, vous contacte, puis vous adresse le contrat <b>à signer</b>.</span></div>
+          <div class="summary__total" style="background:var(--paper-2);border-radius:12px;padding:18px 20px;border:0">
+            <span class="lbl">À régler à la souscription</span>
+            <span class="val"><b id="pay-amount">—</b></span>
+          </div>
+          <div class="secure-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg> Paiement sécurisé par Stripe — vos données bancaires ne transitent jamais par notre site.</div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="tunnel-nav">
+          <button class="btn btn--ghost hide" id="btn-prev">Retour</button>
+          <button class="btn btn--primary" id="btn-next" style="margin-left:auto">Continuer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn btn--brass hide" id="btn-pay" style="margin-left:auto">Payer en ligne <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg></button>
+        </div>
+      </div>
+
+      <!-- RÉCAPITULATIF (colonne droite) -->
+      <aside class="summary">
+        <div class="summary__head"><div class="plaque">
+  <span class="plaque__screw tl"></span><span class="plaque__screw tr"></span>
+  <span class="plaque__screw bl"></span><span class="plaque__screw br"></span>
+  <div class="plaque__label">Siège social</div>
+  <div class="plaque__name" id="plq-name">Votre entreprise</div>
+  <div class="plaque__rule"></div>
+  <div class="plaque__addr">8 rue de l'Est<br>92100 Boulogne-Billancourt</div>
+  <div class="plaque__agr">Agrément préfectoral n°146</div>
+</div></div>
+        <div class="summary__body">
+          <div id="sum-lines"></div>
+          <div class="summary__total">
+            <span class="lbl">Total mensuel</span>
+            <span class="val"><b id="sum-ht">—</b><small id="sum-ttc">—</small></span>
+          </div>
+          <div class="summary__pay">
+            <div class="summary__line muted" style="border:0;padding-top:0"><span>Caution (3 mois)</span><span id="sum-caution">—</span></div>
+            <div class="summary__line" style="border:0"><span>À la souscription</span><span><b id="sum-sous">—</b></span></div>
+            <div style="text-align:right;font-size:12px;color:var(--muted)" id="sum-sous-ttc">—</div>
+          </div>
+          <div class="secure-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg> Sans engagement caché · Résiliable avec préavis</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="../index.html"><span class="brand__mark">N</span><span class="brand__name">Nova<b>dom</b></span></a>
+        <p class="footer-about">Domiciliation commerciale au cœur des Hauts-de-Seine, à deux pas de Paris. Une adresse de prestige pour votre siège social, la gestion de votre courrier et vos formalités d'entreprise — 100 % en ligne.</p>
+        <span class="footer-agr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg> Agrément préfectoral CAB/BPS/SD n°146</span>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="../domiciliation-commerciale/index.html">Domiciliation commerciale</a>
+        <a href="../tarifs-domiciliation-entreprise/index.html">Nos tarifs</a>
+        <a href="../domiciliation-en-ligne/index.html">Souscrire en ligne</a>
+        <a href="../creation-entreprise/index.html">Création d'entreprise</a>
+        <a href="../numericloud/index.html">Numérisation du courrier</a>
+      </div>
+      <div class="footer-col">
+        <h4>En savoir plus</h4>
+        <a href="../domiciliation/domiciliation-en-ligne/index.html">Guide pratique</a>
+        <a href="../demande-de-rappel/index.html">Demande de rappel</a>
+        <a href="../contact/index.html">Nous contacter</a>
+        <a href="../partenaires/index.html">Partenaires</a>
+        <a href="../mentions-legales/index.html">Mentions légales</a>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Agence</h4>
+        <p>NOVADOM<br>8 rue de l'Est, 92100 Boulogne-Billancourt<br>M° Marcel Sembat / Jean Jaurès</p>
+        <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-3 2a14 14 0 006 6l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2z"/></svg> <a href="tel:+33186040887">01 86 04 08 87</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> NOVADOM — SAS au capital de 1 000 € — 902 244 870 RCS Nanterre.</span>
+      <span><a href="../mentions-legales/index.html">Mentions légales</a> · <a href="../contact/index.html">Contact</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+/* NOVADOM — interactions globales (menu, header, apparition) */
+(function () {
+  document.documentElement.classList.add('js');
+  function ready(fn){ if(document.readyState!=='loading'){fn();} else {document.addEventListener('DOMContentLoaded',fn);} }
+  ready(function () {
+    var nav = document.querySelector('.nav');
+    var toggle = document.querySelector('.nav__toggle');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('.nav__links a').forEach(function (a) {
+        a.addEventListener('click', function () { nav.classList.remove('is-open'); });
+      });
+    }
+    var header = document.querySelector('.site-header');
+    if (header) {
+      var onScroll = function () { header.classList.toggle('is-scrolled', window.scrollY > 8); };
+      onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+    }
+    var reveals = document.querySelectorAll('.reveal');
+    if (reveals.length && 'IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      reveals.forEach(function (el) { io.observe(el); });
+      setTimeout(function () { reveals.forEach(function (el) { el.classList.add('in'); }); }, 2500);
+    } else {
+      reveals.forEach(function (el) { el.classList.add('in'); });
+    }
+    document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
+  });
+})();
+
+</script>
+<script src="../assets/js/config.js"></script>
+  <script src="../assets/js/format.js"></script>
+  <script src="../assets/js/tunnel.js"></script>
+</body>
+</html>
