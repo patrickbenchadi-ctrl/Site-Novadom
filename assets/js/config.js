@@ -62,16 +62,13 @@ window.NOVADOM = {
         Laissez "" pour utiliser le mode démonstration (pas de vrai paiement).
      ---------------------------------------------------------------------- */
   stripe: {
-    // Un lien par formule de base. La caution/options sont rappelées au client.
-    // Astuce simple : 1 lien d'abonnement par statut.
     liens: {
-      societe:     "",   // ex : "https://buy.stripe.com/xxxxxxxx"
-      auto:        "",
-      ei:          "",
-      association: "",
-      particulier: ""
+      societe:     "https://buy.stripe.com/test_8x2aEWfHua59h2U6ua4F200",
+      auto:        "https://buy.stripe.com/test_8x2aEWfHua59h2U6ua4F200",
+      ei:          "https://buy.stripe.com/test_8x2aEWfHua59h2U6ua4F200",
+      association: "https://buy.stripe.com/test_8x2aEWfHua59h2U6ua4F200",
+      particulier: "https://buy.stripe.com/test_8x2aEWfHua59h2U6ua4F200"
     },
-    // URL de retour après paiement réussi (à configurer dans Stripe aussi)
     retour: "/merci/"
   },
 
