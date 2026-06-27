@@ -64,11 +64,21 @@ Tout est commenté en français dans le fichier. Ne touchez à rien d'autre.
 
 ## 🌍 ÉTAPE 2 — Activer GitHub Pages (l'hébergement gratuit)
 
-1. Dans votre dépôt GitHub, ouvrez l'onglet **Settings** (en haut).
-2. Dans le menu de gauche, cliquez **Pages**.
-3. Sous **Source**, choisissez **Deploy from a branch**.
-4. Sous **Branch**, sélectionnez **`main`** et le dossier **`/ (root)`**, puis **Save**.
-5. Patientez 1 à 2 minutes : une adresse temporaire apparaît (du type `https://votrecompte.github.io/site-novadom/`). Votre site est en ligne !
+> ⚠️ **Prérequis : le dépôt doit être PUBLIC.** L'hébergement GitHub Pages gratuit ne fonctionne pas sur un dépôt privé (vous verriez le message « Upgrade or make this repository public to enable Pages »). Le dépôt ne contient que le site web — aucun mot de passe ni clé secrète — donc le rendre public est sans risque ici.
+
+**A) Rendre le dépôt public**
+1. Dans votre dépôt, **Settings** (en haut) → **General** (en haut du menu de gauche).
+2. Descendez tout en bas, jusqu'à la zone rouge **« Danger Zone »**.
+3. Ligne **« Change repository visibility »** → **Change visibility** → **Make public**.
+4. Confirmez (GitHub vous fait recopier le nom du dépôt, ex. `patrickbenchadi-ctrl/Site-Novadom`).
+
+**B) Activer Pages**
+5. Revenez dans **Settings → Pages**.
+6. Sous **Source**, choisissez **Deploy from a branch**.
+7. Sous **Branch**, sélectionnez **`main`** et le dossier **`/ (root)`**, puis **Save**.
+8. Patientez 1 à 2 minutes : une adresse temporaire apparaît (du type `https://votrecompte.github.io/Site-Novadom/`). Votre site est en ligne !
+
+> 🔒 Bon à savoir : « public » signifie seulement que le **code du site** est visible (ce qui est normal pour un site web). Ne placez jamais de clé secrète dans le dépôt — ce n'est pas le cas ici. Les liens Stripe et l'identifiant Formspree sont prévus pour être publics.
 
 ---
 

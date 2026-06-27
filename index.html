@@ -18,7 +18,7 @@
    Palette : encre marine + laiton patiné + papier chaud.
    ========================================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
 
 :root{
   /* Couleurs */
@@ -42,7 +42,7 @@
   --red:#B23A3A;
 
   /* Typo */
-  --display:'Fraunces',Georgia,serif;
+  --display:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
   --body:'Hanken Grotesk',system-ui,-apple-system,sans-serif;
   --mono:'Space Mono','SFMono-Regular',monospace;
 
@@ -70,7 +70,7 @@ body{
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer}
-h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:500;line-height:1.08;letter-spacing:-.01em;color:var(--ink)}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:600;line-height:1.1;letter-spacing:-.015em;color:var(--ink)}
 p{margin:0 0 1em}
 ul{margin:0;padding:0;list-style:none}
 :focus-visible{outline:3px solid var(--brass);outline-offset:2px;border-radius:4px}
@@ -88,6 +88,12 @@ ul{margin:0;padding:0;list-style:none}
 .muted{color:var(--muted)}
 .hide{display:none !important}
 .nowrap{white-space:nowrap}
+
+/* étoiles d'avis (style Avis Vérifiés) */
+.stars{display:inline-flex;gap:2px;color:#FAA60A;line-height:0;vertical-align:middle}
+.stars svg{width:17px;height:17px;display:block}
+.rating{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px}
+.rating .score{font-family:var(--mono);font-size:12.5px;font-weight:700;color:var(--muted)}
 
 /* ---------- Boutons ---------- */
 .btn{
@@ -159,8 +165,8 @@ ul{margin:0;padding:0;list-style:none}
   radial-gradient(80% 70% at -5% 10%,rgba(27,51,84,.06),transparent 50%);
   border-bottom:1px solid var(--line-soft)}
 .hero__inner{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;padding-block:84px}
-.hero h1{font-size:clamp(38px,5.4vw,64px);line-height:1.02;letter-spacing:-.02em}
-.hero h1 em{font-style:italic;color:var(--brass-deep)}
+.hero h1{font-size:clamp(38px,5.4vw,62px);line-height:1.04;letter-spacing:-.025em;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--brass-deep);font-weight:800}
 .hero__sub{margin:22px 0 30px;max-width:30em}
 .hero__cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 .hero__trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
@@ -653,9 +659,9 @@ ul{margin:0;padding:0;list-style:none}
   <div class="container narrow">
     <div class="section-head center reveal"><p class="eyebrow">Avis clients</p><h2>Ils ont choisi notre adresse</h2></div>
     <div class="grid3 reveal">
-      <div class="card"><div style="color:var(--brass);margin-bottom:10px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg></div><p style="color:var(--ink-soft)">« Processus ultra-rapide, attestation obtenue très vite. L'adresse à Boulogne fait sérieux auprès de mes clients. »</p><p class="muted" style="margin:0;font-weight:600">— Alexandre P.</p></div>
-      <div class="card"><div style="color:var(--brass);margin-bottom:10px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg></div><p style="color:var(--ink-soft)">« La digitalisation du courrier est un vrai plus. Je reçois tout par e-mail, parfait pour mon activité nomade. »</p><p class="muted" style="margin:0;font-weight:600">— Isabelle R.</p></div>
-      <div class="card"><div style="color:var(--brass);margin-bottom:10px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg></div><p style="color:var(--ink-soft)">« Tarif très compétitif pour une adresse dans le 92. Tout est simple et transparent, aucun regret. »</p><p class="muted" style="margin:0;font-weight:600">— Karim B.</p></div>
+      <div class="card"><div class="rating"><span class="stars" aria-label="5 sur 5 étoiles"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-5.45 3.2 1.45-6.2-4.8-4.16 6.33-.55L12 3.8l2.47 5.8 6.33.55-4.8 4.16 1.45 6.2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-5.45 3.2 1.45-6.2-4.8-4.16 6.33-.55L12 3.8l2.47 5.8 6.33.55-4.8 4.16 1.45 6.2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-5.45 3.2 1.45-6.2-4.8-4.16 6.33-.55L12 3.8l2.47 5.8 6.33.55-4.8 4.16 1.45 6.2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-5.45 3.2 1.45-6.2-4.8-4.16 6.33-.55L12 3.8l2.47 5.8 6.33.55-4.8 4.16 1.45 6.2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-5.45 3.2 1.45-6.2-4.8-4.16 6.33-.55L12 3.8l2.47 5.8 6.33.55-4.8 4.16 1.45 6.2z"/></svg></span><span class="score">5/5</span></div><p style="color:var(--ink-soft)">« Processus ultra-rapide, attestation obtenue très vite. L'adresse à Boulogne fait sérieux auprès de mes clients. »</p><p class="muted" style="margin:0;font-weight:600">— Alexandre P.</p></div>
+      <div class="card"><div class="rating"><span class="stars" aria-label="5 sur 5 étoiles"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-5.45 3.2 1.45-6.2-4.8-4.16 6.33-.55L12 3.8l2.47 5.8 6.33.55-4.8 4.16 1.45 6.2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-5.45 3.2 1.45-6.2-4.8-4.16 6.33-.55L12 3.8l2.47 5.8 6.33.55-4.8 4.16 1.45 6.2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-5.45 3.2 1.45-6.2-4.8-4.16 6.33-.55L12 3.8l2.47 5.8 6.33.55-4.8 4.16 1.45 6.2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-5.45 3.2 1.45-6.2-4.8-4.16 6.33-.55L12 3.8l2.47 5.8 6.33.55-4.8 4.16 1.45 6.2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-5.45 3.2 1.45-6.2-4.8-4.16 6.33-.55L12 3.8l2.47 5.8 6.33.55-4.8 4.16 1.45 6.2z"/></svg></span><span class="score">5/5</span></div><p style="color:var(--ink-soft)">« La digitalisation du courrier est un vrai plus. Je reçois tout par e-mail, parfait pour mon activité nomade. »</p><p class="muted" style="margin:0;font-weight:600">— Isabelle R.</p></div>
+      <div class="card"><div class="rating"><span class="stars" aria-label="5 sur 5 étoiles"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-5.45 3.2 1.45-6.2-4.8-4.16 6.33-.55L12 3.8l2.47 5.8 6.33.55-4.8 4.16 1.45 6.2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-5.45 3.2 1.45-6.2-4.8-4.16 6.33-.55L12 3.8l2.47 5.8 6.33.55-4.8 4.16 1.45 6.2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-5.45 3.2 1.45-6.2-4.8-4.16 6.33-.55L12 3.8l2.47 5.8 6.33.55-4.8 4.16 1.45 6.2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-5.45 3.2 1.45-6.2-4.8-4.16 6.33-.55L12 3.8l2.47 5.8 6.33.55-4.8 4.16 1.45 6.2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-5.45 3.2 1.45-6.2-4.8-4.16 6.33-.55L12 3.8l2.47 5.8 6.33.55-4.8 4.16 1.45 6.2z"/></svg></span><span class="score">5/5</span></div><p style="color:var(--ink-soft)">« Tarif très compétitif pour une adresse dans le 92. Tout est simple et transparent, aucun regret. »</p><p class="muted" style="margin:0;font-weight:600">— Karim B.</p></div>
     </div>
   </div>
 </section>

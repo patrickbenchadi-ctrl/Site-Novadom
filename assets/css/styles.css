@@ -4,7 +4,7 @@
    Palette : encre marine + laiton patiné + papier chaud.
    ========================================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
 
 :root{
   /* Couleurs */
@@ -28,7 +28,7 @@
   --red:#B23A3A;
 
   /* Typo */
-  --display:'Fraunces',Georgia,serif;
+  --display:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
   --body:'Hanken Grotesk',system-ui,-apple-system,sans-serif;
   --mono:'Space Mono','SFMono-Regular',monospace;
 
@@ -56,7 +56,7 @@ body{
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer}
-h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:500;line-height:1.08;letter-spacing:-.01em;color:var(--ink)}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:600;line-height:1.1;letter-spacing:-.015em;color:var(--ink)}
 p{margin:0 0 1em}
 ul{margin:0;padding:0;list-style:none}
 :focus-visible{outline:3px solid var(--brass);outline-offset:2px;border-radius:4px}
@@ -74,6 +74,12 @@ ul{margin:0;padding:0;list-style:none}
 .muted{color:var(--muted)}
 .hide{display:none !important}
 .nowrap{white-space:nowrap}
+
+/* étoiles d'avis (style Avis Vérifiés) */
+.stars{display:inline-flex;gap:2px;color:#FAA60A;line-height:0;vertical-align:middle}
+.stars svg{width:17px;height:17px;display:block}
+.rating{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px}
+.rating .score{font-family:var(--mono);font-size:12.5px;font-weight:700;color:var(--muted)}
 
 /* ---------- Boutons ---------- */
 .btn{
@@ -145,8 +151,8 @@ ul{margin:0;padding:0;list-style:none}
   radial-gradient(80% 70% at -5% 10%,rgba(27,51,84,.06),transparent 50%);
   border-bottom:1px solid var(--line-soft)}
 .hero__inner{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;padding-block:84px}
-.hero h1{font-size:clamp(38px,5.4vw,64px);line-height:1.02;letter-spacing:-.02em}
-.hero h1 em{font-style:italic;color:var(--brass-deep)}
+.hero h1{font-size:clamp(38px,5.4vw,62px);line-height:1.04;letter-spacing:-.025em;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--brass-deep);font-weight:800}
 .hero__sub{margin:22px 0 30px;max-width:30em}
 .hero__cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 .hero__trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
