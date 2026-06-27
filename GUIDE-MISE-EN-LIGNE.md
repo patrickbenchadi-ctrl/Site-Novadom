@@ -140,52 +140,38 @@ stripe: {
 
 ---
 
-## 📧 ÉTAPE 5 — Envoyer automatiquement le contrat par e-mail (après paiement)
+## 📧 ÉTAPE 5 — Recevoir les e-mails AVEC les pièces jointes (Web3Forms) ⭐
 
-Objectif : **après le paiement**, le client reçoit son **contrat marqué SPÉCIMEN**, et **vous (Novadom)** recevez le dossier complet **pour vérification et demande de signature**.
+Objectif : **vous (Novadom)** recevez par e-mail, automatiquement :
+- les **messages du formulaire de contact** (avec document joint si le visiteur en ajoute un) ;
+- après chaque commande, le **dossier complet** : pièce d'identité (CNI), justificatif de domicile, Kbis **+ le contrat en PDF**, le tout **en pièces jointes**.
 
-Un site « statique » ne peut pas envoyer d'e-mail seul : on utilise un petit **automate no-code**. Le plus simple est **Make.com** (ou Zapier).
+Un site « statique » ne peut pas envoyer d'e-mail seul. La solution la plus simple, **sans inscription et gratuite**, est **Web3Forms** :
 
-### Comment ça marche (le site envoie 2 signaux)
-- Au clic sur **Payer**, le site envoie un signal `initiated` contenant **toutes les informations + les pièces déposées** (pièce d'identité, justificatif…).
-- Sur la page **/merci/** (donc **après le paiement réussi**), le site envoie un signal `paid` qui déclenche l'**envoi des e-mails**.
-
-Les deux signaux portent la **même référence `ND-...`** pour les relier.
-
-### Mise en place avec Make.com (≈ 15 min)
-1. Créez un compte sur **https://www.make.com**.
-2. Nouveau scénario → premier module **« Webhooks → Custom webhook »** → **Add** → copiez l'URL générée (de type `https://hook.eu1.make.com/xxxxxxxx`).
-3. Collez cette URL dans **`config.js`** :
+1. Allez sur **https://web3forms.com**.
+2. Saisissez l'**e-mail de réception** (celui de Novadom, là où vous voulez recevoir les dossiers) → vous recevez aussitôt une **clé d'accès** (de type `a1b2c3d4-1234-...`).
+3. Collez cette clé dans **`config.js`** :
    ```js
-   endpointEnvoi: "https://hook.eu1.make.com/xxxxxxxx",
+   web3formsKey: "a1b2c3d4-1234-5678-9abc-def012345678",
    ```
-4. Dans Make, ajoutez un module **« Router »** puis deux branches selon le champ **`event`** :
-   - **Branche `initiated`** → module **Email / Gmail → Send an email** : destinataire = **vous (Novadom)**. Mettez en pièces jointes les fichiers reçus (champ `documents`) et le contrat (`contractHtml`). Objet : « Nouveau dossier `{{reference}}` — à vérifier ».
-   - **Branche `paid`** → **deux** envois d'e-mail :
-     1. **Au client** (`{{emailClient}}`) : objet « Votre contrat de domiciliation (spécimen) — `{{reference}}` ». **Joignez le PDF** : dans Make, ajoutez une pièce jointe à partir du champ **`contractPdfBase64`** (contenu encodé en base64), avec pour nom de fichier **`{{contractPdfName}}`**. C'est le contrat **pré-rempli, marqué SPÉCIMEN**. (Vous pouvez aussi mettre `{{contractHtml}}` dans le corps du message.)
-     2. **À Novadom** : « Paiement confirmé `{{reference}}` — contacter le client puis envoyer à signer » (joignez aussi le PDF si besoin).
+4. C'est tout. Désormais :
+   - le **formulaire de contact** (avec pièce jointe éventuelle) vous arrive par e-mail ;
+   - à chaque commande, **le dossier + la CNI + les pièces + le contrat PDF** vous sont envoyés en pièces jointes (objet « Nouvelle souscription ND-… ») ;
+   - après paiement, une **confirmation** vous parvient avec le contrat PDF (objet « Paiement confirmé ND-… »).
 
-> 💡 Le site fabrique le PDF tout seul dans le navigateur du client et l'envoie en base64 dans l'événement `paid`. Dans Make/Zapier, cherchez l'option « Convert base64 to file » (ou « Create file from base64 ») pour obtenir la pièce jointe.
-5. **Activez** le scénario (interrupteur en bas à gauche).
+> 📎 Limite de Web3Forms : environ **5 Mo de pièces jointes** par envoi. Les pièces d'identité (photos/PDF) tiennent largement dedans.
 
-> 💡 Variante encore plus simple (sans pièces jointes automatiques) : **Formspree** (https://formspree.io). Vous collez l'URL du formulaire dans `endpointEnvoi`, et vous recevez chaque dossier par e-mail. Make reste recommandé pour tout automatiser.
+> 👤 **Et le client ?** Sur la page de remerciement, il peut **télécharger lui-même son contrat (PDF) marqué SPÉCIMEN** d'un clic. Pour qu'un e-mail parte **automatiquement vers le client** avec le PDF, il faut un service capable d'écrire à une adresse quelconque (Web3Forms n'écrit qu'à VOTRE boîte). Voir la variante Make ci-dessous si vous le souhaitez.
 
-> Tant que `endpointEnvoi` est vide `""`, les e-mails sont **simulés** (rien n'est envoyé) — pour tester l'affichage.
+> ⚙️ **Variante avancée (option) :** si vous préférez tout automatiser (e-mail au client + à Novadom, routage…), utilisez **Make.com** : créez un « Custom webhook », collez son URL dans `endpointEnvoi` (dans `config.js`), et construisez deux branches `initiated` / `paid`. Le PDF arrive en base64 (`contractPdfBase64`) ; utilisez « base64 to file » pour la pièce jointe. *(Si `web3formsKey` est rempli, c'est lui qui est utilisé en priorité.)*
 
 ---
 
-## ✉️ ÉTAPE 6 — Activer les formulaires Contact & Rappel
+## ✉️ ÉTAPE 6 — Formulaires Contact & Rappel
 
-Les pages **Contact** et **Demande de rappel** sont déjà prêtes. Pour recevoir réellement les messages par e-mail, une seule manipulation :
+**Si vous avez rempli `web3formsKey` (étape 5), c'est déjà fait** : Contact et Rappel envoient leurs messages (et la pièce jointe du contact) vers votre boîte e-mail. Rien d'autre à faire.
 
-1. Créez un formulaire gratuit sur **https://formspree.io**. Vous obtenez une adresse du type `https://formspree.io/f/abcdwxyz`.
-2. Copiez **uniquement l'identifiant** à la fin (ici `abcdwxyz`) et collez-le dans **`config.js`** :
-   ```js
-   formspree: "abcdwxyz",
-   ```
-3. C'est tout. Les deux formulaires enverront leurs messages à l'adresse e-mail associée à votre compte Formspree, avec un message de confirmation affiché au visiteur.
-
-> Si vous laissez `formspree: ""`, le bouton ouvre directement le **logiciel de messagerie** du visiteur (pré-rempli vers votre e-mail) — pratique comme solution de repli sans inscription.
+Sinon, sans aucune clé, le bouton ouvre le **logiciel de messagerie** du visiteur, pré-rempli vers votre adresse (`societe.email`) — solution de repli sans inscription (mais sans pièce jointe automatique).
 
 ---
 

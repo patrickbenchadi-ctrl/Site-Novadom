@@ -540,6 +540,7 @@ ul{margin:0;padding:0;list-style:none}
         <div class="row2"><div class="field"><label for="c-nom">Nom <span class="req">*</span></label><input id="c-nom" type="text" placeholder="" value="" data-required></div><div class="field"><label for="c-email">E-mail <span class="req">*</span></label><input id="c-email" type="email" placeholder="" value="" data-required data-format="email"></div></div>
         <div class="field"><label for="c-tel">Téléphone</label><input id="c-tel" type="tel" placeholder="" value="" data-format="tel"></div>
         <div class="field"><label for="c-message">Votre message <span class="req">*</span></label><textarea id="c-message" placeholder="Bonjour, je souhaite…" data-required></textarea></div>
+        <div class="field"><label for="c-fichier">Pièce(s) jointe(s) <span class="muted">(facultatif — CNI, justificatif… PDF, JPG, PNG)</span></label><input id="c-fichier" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple></div>
         <button class="btn btn--primary btn--block" type="submit">Envoyer mon message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
         <div class="form-status"></div>
       </form>
@@ -632,6 +633,7 @@ ul{margin:0;padding:0;list-style:none}
 </script>
 <script src="../assets/js/config.js"></script>
   <script src="../assets/js/format.js"></script>
+  <script src="../assets/js/mailer.js"></script>
   <script src="../assets/js/forms.js"></script>
 </body>
 </html>

@@ -254,13 +254,7 @@
 
     var btn = $('#btn-pay'); btn.disabled = true; btn.textContent = 'Préparation du paiement…';
 
-    // Envoi complet (avec pièces) à l'automatisation — événement « initiated »
-    filesToBase64().then(function (files) {
-      var payload = Object.assign({ event: 'initiated', reference: ref, contractHtml: contractHtml, documents: files }, d);
-      if (C.endpointEnvoi) {
-        fetch(C.endpointEnvoi, { method: 'POST', mode: 'cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }).catch(function () {});
-      }
-      // Redirection vers Stripe (ou mode démo)
+    function redirect() {
       var link = (C.stripe.liens || {})[d.statut];
       if (link) {
         var sep = link.indexOf('?') > -1 ? '&' : '?';
@@ -268,7 +262,52 @@
       } else {
         window.location.href = '../merci/index.html?ref=' + encodeURIComponent(ref) + '&demo=1';
       }
-    });
+    }
+
+    // Pièces jointes : documents déposés + contrat en PDF
+    var files = [];
+    Object.keys(state.files).forEach(function (k) { files.push(state.files[k]); });
+    try {
+      if (C.genererContratPDF) {
+        var pdoc = C.genererContratPDF(Object.assign({ reference: ref }, d));
+        if (pdoc) files.push(new File([pdoc.output('blob')], 'contrat-domiciliation-SPECIMEN-' + ref + '.pdf', { type: 'application/pdf' }));
+      }
+    } catch (e) {}
+
+    var dossier = {
+      reference: ref,
+      raison_sociale: d.raisonSociale, statut: d.statutLabel,
+      responsable: (d.civilite || '') + ' ' + (d.prenom || '') + ' ' + (d.nom || '') + ' (' + (d.qualite || '') + ')',
+      email_client: d.emailClient, telephone: d.telClient,
+      adresse_client: (d.adresseClient || '') + ' ' + (d.cpClient || '') + ' ' + (d.villeClient || ''),
+      piece_identite: (d.pieceType || '') + ' n° ' + (d.pieceNum || ''),
+      rcs: d.rcsClient, capital: d.capital, activite: d.activite, date_effet: d.dateEffet,
+      options: [d.reexpedition ? 'Réexpédition' : null, d.numerisation ? 'Numérisation' : null].filter(Boolean).join(' + ') || 'Aucune',
+      redevance_HT: d.mensuelHT + ' EUR/mois', caution: d.caution + ' EUR',
+      pieces_jointes: files.map(function (f) { return f.name; }).join(', ')
+    };
+
+    // 1) Dossier (avec pièces jointes) -> Novadom, via Web3Forms
+    if (window.NDmail && window.NDmail.enabled()) {
+      window.NDmail.send({
+        subject: 'Nouvelle souscription ' + ref + ' — dossier a verifier',
+        fromName: 'Souscription Novadom', replyTo: d.emailClient,
+        fields: dossier, files: files
+      }).then(redirect, redirect);
+      return;
+    }
+
+    // 2) Sinon : webhook d'automatisation (Make/Zapier) en base64
+    if (C.endpointEnvoi) {
+      filesToBase64().then(function (fb) {
+        var payload = Object.assign({ event: 'initiated', reference: ref, contractHtml: contractHtml, documents: fb }, d);
+        fetch(C.endpointEnvoi, { method: 'POST', mode: 'cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }).then(redirect, redirect);
+      });
+      return;
+    }
+
+    // 3) Mode démonstration
+    redirect();
   }
 
   /* ---------- Init ---------- */

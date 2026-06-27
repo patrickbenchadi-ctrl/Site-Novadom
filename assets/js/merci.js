@@ -39,28 +39,49 @@
   var spin = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a9 9 0 109 9"/></svg>';
   var warn = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9l-8 14A2 2 0 004 21h16a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>';
 
-  setStatus('pending', 'Envoi du contrat en cours…', spin);
+  setStatus('pending', 'Finalisation en cours…', spin);
 
+  // Contrat en PDF (objet jsPDF) pour pièce jointe + base64 pour webhook
+  var pdfDoc = null, pdfFile = null;
+  try {
+    if (order && window.NOVADOM.genererContratPDF) {
+      pdfDoc = window.NOVADOM.genererContratPDF(order);
+      if (pdfDoc) pdfFile = new File([pdfDoc.output('blob')], window.NOVADOM.nomFichierContrat(order), { type: 'application/pdf' });
+    }
+  } catch (e) {}
+
+  // 1) Web3Forms : confirmation de paiement + contrat (PDF) -> Novadom
+  if (order && window.NDmail && window.NDmail.enabled()) {
+    window.NDmail.send({
+      subject: 'Paiement confirmé ' + ref + ' — contacter le client puis envoyer à signer',
+      fromName: 'Paiement Novadom', replyTo: order.emailClient,
+      fields: {
+        reference: ref,
+        client: ((order.prenom || '') + ' ' + (order.nom || '')).trim(),
+        email_client: order.emailClient, telephone: order.telClient,
+        raison_sociale: order.raisonSociale, redevance_HT: (order.mensuelHT || '') + ' EUR/mois',
+        statut: 'PAIEMENT CONFIRMÉ'
+      },
+      files: pdfFile ? [pdfFile] : []
+    }).then(function (res) {
+      if (res.ok) setStatus('ok', 'Dossier transmis à Novadom. Téléchargez votre contrat ci-dessous.', check);
+      else setStatus('err', 'Réception à confirmer — notre équipe vous recontacte sous 24 h.', warn);
+    }).catch(function () {
+      setStatus('err', 'Réception à confirmer — notre équipe vous recontacte sous 24 h.', warn);
+    });
+    return;
+  }
+
+  // 2) Webhook Make/Zapier (base64) — option avancée
   var payload = {
-    event: 'paid',
-    reference: ref,
+    event: 'paid', reference: ref,
     emailClient: order && order.emailClient,
     nomClient: order && ((order.prenom || '') + ' ' + (order.nom || '')).trim(),
     raisonSociale: order && order.raisonSociale,
     mensuelHT: order && order.mensuelHT,
     contractHtml: order && order.contractHtml
   };
-
-  // Joindre le contrat en PDF (base64) pour l'e-mail au client + dossier Novadom
-  try {
-    if (order && window.NOVADOM.genererContratPDF) {
-      var pdfDoc = window.NOVADOM.genererContratPDF(order);
-      if (pdfDoc) {
-        payload.contractPdfBase64 = pdfDoc.output('datauristring').split(',')[1];
-        payload.contractPdfName = window.NOVADOM.nomFichierContrat(order);
-      }
-    }
-  } catch (e) { /* le PDF n'est pas bloquant pour l'envoi */ }
+  try { if (pdfDoc) { payload.contractPdfBase64 = pdfDoc.output('datauristring').split(',')[1]; payload.contractPdfName = window.NOVADOM.nomFichierContrat(order); } } catch (e) {}
 
   if (C.endpointEnvoi) {
     fetch(C.endpointEnvoi, { method: 'POST', mode: 'cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
@@ -72,9 +93,8 @@
         setStatus('err', 'Envoi à confirmer — notre équipe vous recontacte sous 24 h.', warn);
       });
   } else {
-    // Mode démonstration (aucun endpoint configuré)
     setTimeout(function () {
-      setStatus('ok', 'Démo : contrat spécimen « envoyé » à ' + (payload.emailClient || 'votre e-mail'), check);
+      setStatus('ok', 'Démo : téléchargez votre contrat spécimen ci-dessous.', check);
     }, 900);
   }
 

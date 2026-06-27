@@ -84,17 +84,26 @@ window.NOVADOM = {
   endpointEnvoi: "",   // ex : "https://hook.eu1.make.com/xxxxxxxx"
 
   /* ----------------------------------------------------------------------
-     5) FORMULAIRES Contact & Rappel
-        Collez ici l'identifiant de votre formulaire Formspree (gratuit).
-        Créez un formulaire sur https://formspree.io -> vous obtenez une URL
-        du type https://formspree.io/f/abcdwxyz : copiez juste « abcdwxyz ».
-        Si vous laissez "", le bouton ouvre directement le logiciel d'e-mail
-        du visiteur (solution de repli, sans inscription).
+     5) ENVOI DES E-MAILS AVEC PIÈCES JOINTES (recommandé) — Web3Forms
+        Permet d'envoyer à VOTRE boîte e-mail :
+          • les messages du formulaire de contact (avec document joint),
+          • le dossier complet après commande (CNI, justificatif, Kbis + contrat PDF).
+        Comment obtenir la clé (gratuit, 30 s, sans inscription) :
+          1. Allez sur https://web3forms.com
+          2. Saisissez l'e-mail de réception (celui de Novadom) → vous recevez une clé.
+          3. Collez la clé ci-dessous.
+        Tant que c'est "", le contact bascule sur un envoi simple (sans pièce jointe).
+     ---------------------------------------------------------------------- */
+  web3formsKey: "",   // ex : "a1b2c3d4-1234-5678-9abc-def012345678"
+
+  /* ----------------------------------------------------------------------
+     6) (Option avancée) FORMULAIRES via Formspree — laissez "" si vous
+        utilisez Web3Forms ci-dessus.
      ---------------------------------------------------------------------- */
   formspree: "",   // ex : "abcdwxyz"
 
   /* ----------------------------------------------------------------------
-     6) DOCUMENTS demandés au client (étape dépôt de pièces)
+     7) DOCUMENTS demandés au client (étape dépôt de pièces)
      ---------------------------------------------------------------------- */
   documents: [
     { id:"identite",   label:"Pièce d'identité du responsable légal", desc:"CNI ou passeport en cours de validité", requis:true },
