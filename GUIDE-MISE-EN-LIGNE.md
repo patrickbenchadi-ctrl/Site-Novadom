@@ -84,29 +84,29 @@ Tout est commenté en français dans le fichier. Ne touchez à rien d'autre.
 
 ## 🔗 ÉTAPE 3 — Brancher votre domaine OVH `boulogne-domiciliation.com`
 
-Le fichier **`CNAME`** (déjà inclus) indique à GitHub votre domaine. Il reste à dire à OVH de pointer vers GitHub.
+> ⚠️ **À ne faire qu'une fois prêt à basculer.** Tant que vous ne configurez PAS le domaine, votre nouveau site reste visible sur l'adresse `github.io` et votre **ancien site reste en ligne** sur `boulogne-domiciliation.com`. Ne mettez pas de fichier `CNAME` dans le dépôt et ne remplissez pas « Custom domain » tant que la zone DNS n'est pas configurée — sinon l'adresse `github.io` redirige vers l'ancien site.
 
-### A) Côté GitHub
-1. **Settings → Pages → Custom domain** : saisissez `www.boulogne-domiciliation.com` puis **Save**.
-2. Cochez **Enforce HTTPS** (peut apparaître après quelques minutes — le cadenas sécurisé est gratuit).
-
-### B) Côté OVH (zone DNS)
-1. Connectez-vous à votre **espace client OVH** → **Noms de domaine** → `boulogne-domiciliation.com` → onglet **Zone DNS**.
+### A) Côté OVH (zone DNS) — à faire EN PREMIER
+1. Espace client OVH → **Noms de domaine** → `boulogne-domiciliation.com` → onglet **Zone DNS**.
 2. Créez / modifiez ces entrées :
 
 | Type  | Sous-domaine | Cible / Valeur |
 |-------|--------------|----------------|
-| CNAME | `www`        | `votrecompte.github.io.` *(avec le point final)* |
+| CNAME | `www`        | `patrickbenchadi-ctrl.github.io.` *(avec le point final)* |
 | A     | *(vide = le domaine nu)* | `185.199.108.153` |
 | A     | *(vide)*     | `185.199.109.153` |
 | A     | *(vide)*     | `185.199.110.153` |
 | A     | *(vide)*     | `185.199.111.153` |
 
-> Ces 4 adresses « A » sont les serveurs officiels de GitHub Pages. Elles font que `boulogne-domiciliation.com` (sans `www`) redirige vers `www`.
+3. Enregistrez et patientez la propagation (de quelques minutes à 24 h).
 
-3. Enregistrez. **La propagation DNS prend de quelques minutes à 24 h.** Patientez, puis testez `https://www.boulogne-domiciliation.com`.
+### B) Côté GitHub — une fois la DNS en place
+4. **Settings → Pages → Custom domain** : saisissez `www.boulogne-domiciliation.com` puis **Save** (GitHub recrée alors automatiquement le fichier `CNAME`).
+5. Cochez **Enforce HTTPS** (le cadenas sécurisé, gratuit — peut apparaître après quelques minutes).
 
-> ⚠️ Si l'ancien site est encore hébergé ailleurs (o2switch), ne coupez l'ancien hébergement **qu'après** avoir vérifié que le nouveau s'affiche bien.
+> Le fichier `CNAME.a-ajouter-plus-tard.txt` fourni contient simplement le texte à saisir dans « Custom domain ». Vous n'avez rien à uploader vous-même : GitHub gère le fichier `CNAME` quand vous remplissez le champ à l'étape 4.
+
+> ⚠️ Coupez l'ancien hébergement (o2switch) **seulement après** avoir vérifié que `https://www.boulogne-domiciliation.com` affiche bien le nouveau site.
 
 ---
 
